@@ -5,6 +5,7 @@ import NoteDetail from "../components/NoteDetail";
 import ArchiveButton from "../components/ArchiveButton";
 import UnArchiveButton from "../components/UnArchiveButton";
 import DeleteButton from "../components/DeleteButton";
+import NotFoundPage from "./404Page";
 
 function DetailPage({
     getNote,
