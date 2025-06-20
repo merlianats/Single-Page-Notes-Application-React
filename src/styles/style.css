@@ -103,6 +103,7 @@ main {
 .note-item__body {
   margin-top: 16px;
   overflow: hidden;
+  text-align: justify;
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 6;
@@ -129,6 +130,7 @@ main {
   line-height: 1.5;
   margin-top: 36px;
   font-size: 18px;
+  text-align: justify;
 }
 
 .detail-page__action, .homepage__action, .add-new-page__action {
