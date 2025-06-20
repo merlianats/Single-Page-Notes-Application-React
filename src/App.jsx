@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import HomepageApp from './components/HomepageApp';
 import DetailPage from './pages/DetailPage';
+import ArchivesNote from './components/ArchivesNote';
 
 class App extends React.Component{
   constructor(props){
@@ -18,6 +19,7 @@ class App extends React.Component{
     this.handleArchiveNote = this.handleArchiveNote.bind(this);
     this.handleUnarchiveNote = this.handleUnarchiveNote.bind(this);
     this.handleDeleteNote = this.handleDeleteNote.bind(this);
+    this.getArchivedNote = this.getArchivedNote.bind(this);
   }
 
   handleArchiveNote(noteId) {
@@ -57,6 +59,10 @@ class App extends React.Component{
     return this.state.notes.find((note) => note.id === noteId);
   }
 
+  getArchivedNote() {
+    return this.state.notes.filter((note) => note.archived);
+  }
+
   render() {
     return (
       <div className='app-container'>
@@ -65,17 +71,19 @@ class App extends React.Component{
           <Routes>
             {/*Route Path Homepage*/}
             <Route path='/' element={<HomepageApp getActiveNotes={this.getActiveNotes} />} />
-             {/*Route Path Detail Page*/}
-             <Route 
-                path='/notes/:noteId' 
-                element={
-                  <DetailPage
-                    getNote={this.getNote}
-                    handleArchiveNote={this.handleArchiveNote}
-                    handleUnarchiveNote={this.handleUnarchiveNote}
-                    handleDeleteNote={this.handleDeleteNote} />
-                } 
-              />
+            {/*Route Path Detail Page*/}
+            <Route 
+              path='/notes/:noteId' 
+              element={
+                <DetailPage
+                  getNote={this.getNote}
+                  handleArchiveNote={this.handleArchiveNote}
+                  handleUnarchiveNote={this.handleUnarchiveNote}
+                  handleDeleteNote={this.handleDeleteNote} />
+              } 
+            />
+            {/*Route Path Arcived Page*/}
+            <Route path='/archives' element={<ArchivesNote getArchivedNote={this.getArchivedNote} />} />
           </Routes>
         </main>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import SearchBar from "../components/SearchBar";
 import AddNoteButton from "../components/AddNoteButton";
-import NotesList from "../components/NotesList";
+import NotesList from "../components/NoteList";
 
 class Homepage extends React.Component{
         constructor(props) {
