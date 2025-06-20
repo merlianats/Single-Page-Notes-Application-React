@@ -23,7 +23,7 @@ function NotesList({ notes, emptyNotes}){
     }
 }
 
-NoteList.PropTypes = {
+NotesList.PropTypes = {
     notes: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,

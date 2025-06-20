@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function SearchBar({ keyword, onSearch }){
     return (
-        <section>
+        <section className="search-bar">
             <input 
                 type="text" 
                 placeholder="Search for notes ..."
